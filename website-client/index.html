@@ -44,7 +44,7 @@
                     <h3>Laptop Pro 15"</h3>
                     <p class="description">Ordinateur portable haute performance, parfait pour le travail et les loisirs</p>
                     <p class="price">1299,99 €</p>
-                    <button class="btn-add-cart">Ajouter au panier</button>
+                    <button class="btn-add-cart" data-product-id="laptop-pro" data-product-name="Laptop Pro 15&quot;" data-product-price="1299.99">Ajouter au panier</button>
                 </article>
 
                 <!-- Product 2 -->
@@ -53,7 +53,7 @@
                     <h3>Smartphone X</h3>
                     <p class="description">Le dernier smartphone avec caméra haute résolution et 5G</p>
                     <p class="price">899,99 €</p>
-                    <button class="btn-add-cart">Ajouter au panier</button>
+                    <button class="btn-add-cart" data-product-id="smartphone-x" data-product-name="Smartphone X" data-product-price="899.99">Ajouter au panier</button>
                 </article>
 
                 <!-- Product 3 -->
@@ -62,7 +62,7 @@
                     <h3>Casque Audio Pro</h3>
                     <p class="description">Casque sans fil avec réduction de bruit active</p>
                     <p class="price">199,99 €</p>
-                    <button class="btn-add-cart">Ajouter au panier</button>
+                    <button class="btn-add-cart" data-product-id="casque-audio" data-product-name="Casque Audio Pro" data-product-price="199.99">Ajouter au panier</button>
                 </article>
 
                 <!-- Product 4 -->
@@ -71,8 +71,24 @@
                     <h3>Tablette Tab 10"</h3>
                     <p class="description">Tablette légère et puissante pour votre quotidien</p>
                     <p class="price">449,99 €</p>
-                    <button class="btn-add-cart">Ajouter au panier</button>
+                    <button class="btn-add-cart" data-product-id="tablette-tab" data-product-name="Tablette Tab 10&quot;" data-product-price="449.99">Ajouter au panier</button>
                 </article>
+            </div>
+        </section>
+
+        <!-- Cart section -->
+        <section id="panier">
+            <h2>Mon Panier</h2>
+            <div id="cart-content">
+                <p class="empty-cart">Votre panier est vide</p>
+            </div>
+            <div id="cart-summary" style="display: none;">
+                <div class="cart-total">
+                    <span>Total :</span>
+                    <span id="cart-total-amount">0,00 €</span>
+                </div>
+                <button id="btn-clear-cart" class="btn-secondary">Vider le panier</button>
+                <button id="btn-checkout" class="btn-primary">Commander</button>
             </div>
         </section>
 
