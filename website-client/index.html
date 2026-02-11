@@ -1,2 +1,121 @@
-<!-- Website with hidden tracking pixel/script -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechShop - Votre boutique électronique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>TechShop</h1>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="#panier">Panier (0)</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Main content -->
+    <main>
+        <section id="hero">
+            <h2>Bienvenue sur TechShop</h2>
+            <p>Découvrez nos produits électroniques de qualité</p>
+        </section>
+
+        <!-- Products section -->
+        <section id="produits">
+            <h2>Nos Produits</h2>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <img src="images/laptop.png" alt="Laptop Pro">
+                    <h3>Laptop Pro 15"</h3>
+                    <p class="description">Ordinateur portable haute performance, parfait pour le travail et les loisirs</p>
+                    <p class="price">1299,99 €</p>
+                    <button class="btn-add-cart">Ajouter au panier</button>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <img src="images/smartphone.png" alt="Smartphone X">
+                    <h3>Smartphone X</h3>
+                    <p class="description">Le dernier smartphone avec caméra haute résolution et 5G</p>
+                    <p class="price">899,99 €</p>
+                    <button class="btn-add-cart">Ajouter au panier</button>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <img src="images/casque.png" alt="Casque Audio">
+                    <h3>Casque Audio Pro</h3>
+                    <p class="description">Casque sans fil avec réduction de bruit active</p>
+                    <p class="price">199,99 €</p>
+                    <button class="btn-add-cart">Ajouter au panier</button>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card">
+                    <img src="images/tablette.png" alt="Tablette">
+                    <h3>Tablette Tab 10"</h3>
+                    <p class="description">Tablette légère et puissante pour votre quotidien</p>
+                    <p class="price">449,99 €</p>
+                    <button class="btn-add-cart">Ajouter au panier</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+            <form>
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>À propos</h4>
+                <p>TechShop - Votre partenaire électronique depuis 2026</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Liens légaux</h4>
+                <ul>
+                    <li><a href="#cgv">Conditions générales de vente</a></li>
+                    <li><a href="#mentions">Mentions légales</a></li>
+                    <li><a href="#confidentialite">Politique de confidentialité</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <ul>
+                    <li><a href="#facebook">Facebook</a></li>
+                    <li><a href="#twitter">Twitter</a></li>
+                    <li><a href="#instagram">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class="copyright">&copy; 2026 TechShop. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
