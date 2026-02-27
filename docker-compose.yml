@@ -1,3 +1,14 @@
-# Docker Compose configuration
-# Orchestrates the website and tracker server
+services:
+  tracker-server:
+    build: ./tracker-server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./tracker-server:/app:z
 
+  website-client:
+    build: ./website-client
+    ports:
+      - "8080:80"
+    volumes:
+      - ./website-client:/usr/share/nginx/html:z

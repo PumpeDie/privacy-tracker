@@ -59,6 +59,11 @@ class ShoppingCart {
         this.saveCart();
         this.updateCartDisplay();
         this.showNotification(`${productName} ajouté au panier`);
+
+        // Suivi de l'ajout au panier
+        if (typeof trackAction === 'function') {
+            trackAction('Ajout Panier', { product: productName, price: productPrice });
+        }
     }
 
     // Get total items count
@@ -256,4 +261,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial render of cart
     cart.renderCart();
+});
+
+/* --- Logique du Projet de Suivi --- */
+const TRACKER_URL = 'http://localhost:5000';
+
+// 1. Injection du Tracking Pixel (Déclenchement passif)
+function injectTrackingPixel() {
+    const pixel = document.createElement('img');
+    pixel.src = `${TRACKER_URL}/pixel.gif?page=${window.location.hash || 'accueil'}`;
+    pixel.style.display = 'none';
+    document.body.appendChild(pixel);
+}
+
+// 2. Envoi des actions explicites
+function trackAction(actionName, extraData = {}) {
+    const payload = {
+        action: actionName,
+        tracker_id: localStorage.getItem('tracker_id') || 'profil_anonyme',
+        ...extraData
+    };
+
+    fetch(`${TRACKER_URL}/track`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    }).catch(err => console.error("Erreur de suivi", err));
+}
+
+// 3. Gestion du consentement
+const consentBanner = document.getElementById('consent-banner');
+const btnAccept = document.getElementById('btn-accept-cookies');
+const btnReject = document.getElementById('btn-reject-cookies');
+
+function initTracking() {
+    // Le pixel est injecté systématiquement pour montrer la collecte invisible
+    injectTrackingPixel();
+
+    if (!localStorage.getItem('consent_status')) {
+        consentBanner.classList.remove('hidden');
+    } else {
+        consentBanner.classList.add('hidden');
+    }
+}
+
+if (btnAccept && btnReject) {
+    btnAccept.addEventListener('click', () => {
+        localStorage.setItem('consent_status', 'accepted');
+        // Génération d'un identifiant persistant pour corréler les actions
+        localStorage.setItem('tracker_id', 'user_' + Math.random().toString(36).substr(2, 9));
+        consentBanner.classList.add('hidden');
+        trackAction('Consentement Accepté');
+        fetchLogs();
+    });
+
+    btnReject.addEventListener('click', () => {
+        localStorage.setItem('consent_status', 'rejected');
+        localStorage.removeItem('tracker_id');
+        consentBanner.classList.add('hidden');
+        trackAction('Consentement Refusé');
+        fetchLogs();
+    });
+}
+
+// 4. Affichage des Logs
+const btnRefreshLogs = document.getElementById('btn-refresh-logs');
+const logsOutput = document.getElementById('logs-output');
+
+function fetchLogs() {
+    if (!logsOutput) return;
+    
+    fetch(`${TRACKER_URL}/logs`)
+        .then(res => res.json())
+        .then(data => {
+            logsOutput.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(err => {
+            logsOutput.textContent = "Erreur de connexion au serveur de suivi ou aucun log disponible.";
+        });
+}
+
+if (btnRefreshLogs) {
+    btnRefreshLogs.addEventListener('click', fetchLogs);
+}
+
+// Initialisation au chargement
+document.addEventListener('DOMContentLoaded', () => {
+    initTracking();
+    fetchLogs();
 });

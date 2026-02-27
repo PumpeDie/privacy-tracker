@@ -1,0 +1,44 @@
+[
+    {
+        "timestamp": "2026-02-27T20:28:28.361896",
+        "event": "Consentement Accept\u00e9",
+        "ip_address": "172.24.0.1",
+        "details": {
+            "action": "Consentement Accept\u00e9",
+            "tracker_id": "user_43z4ke6zc"
+        },
+        "cookies": {}
+    },
+    {
+        "timestamp": "2026-02-27T20:28:35.718576",
+        "event": "Ajout Panier",
+        "ip_address": "172.24.0.1",
+        "details": {
+            "action": "Ajout Panier",
+            "tracker_id": "user_43z4ke6zc",
+            "product": "Tablette Tab 10\"",
+            "price": "449.99"
+        },
+        "cookies": {}
+    },
+    {
+        "timestamp": "2026-02-27T20:38:08.389405",
+        "event": "Chargement Pixel",
+        "ip_address": "172.24.0.1",
+        "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0",
+        "url_params": {
+            "page": "accueil"
+        },
+        "cookies": {}
+    },
+    {
+        "timestamp": "2026-02-27T20:38:10.344272",
+        "event": "Chargement Pixel",
+        "ip_address": "172.24.0.1",
+        "user_agent": "Mozilla/5.0 (X11; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0",
+        "url_params": {
+            "page": "accueil"
+        },
+        "cookies": {}
+    }
+]
