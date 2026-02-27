@@ -8,6 +8,12 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <div id="consent-banner" class="consent-banner">
+        <p>Ce site utilise des mécanismes de suivi pour lier vos actions à un profil.</p>
+        <button id="btn-accept-cookies" class="btn-primary">Accepter le suivi</button>
+        <button id="btn-reject-cookies" class="btn-secondary">Refuser</button>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="header-content">
@@ -107,6 +113,12 @@
                 
                 <button type="submit">Envoyer</button>
             </form>
+        </section>
+
+        <section id="logs-viewer">
+            <h2>Console de suivi (Visualisation des données collectées)</h2>
+            <button id="btn-refresh-logs" class="btn-secondary">Rafraîchir les logs</button>
+            <pre id="logs-output">En attente de données...</pre>
         </section>
     </main>
 

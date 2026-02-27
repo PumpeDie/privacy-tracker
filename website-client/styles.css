@@ -610,3 +610,45 @@ footer {
         text-align: center;
     }
 }
+
+/* --- Éléments du Projet de Suivi --- */
+.consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-bg);
+    padding: 1rem 2rem;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+    border-top: 2px solid var(--primary-color);
+}
+
+.consent-banner.hidden {
+    display: none;
+}
+
+#logs-viewer {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 4rem;
+    border: 1px solid var(--border-color);
+}
+
+#logs-output {
+    background-color: #1e1e1e;
+    color: #4ade80;
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    max-height: 500px;
+    margin-top: 1rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+}

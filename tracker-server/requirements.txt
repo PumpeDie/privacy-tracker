@@ -1,2 +1,2 @@
-# Python dependencies for tracker server
-
+Flask
+Flask-Cors
